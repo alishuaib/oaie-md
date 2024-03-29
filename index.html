@@ -7,30 +7,33 @@
 			content="width=device-width, initial-scale=1.0"
 		/>
 		<title>Help</title>
+<link rel="stylesheet" type="text/css" href="prism.css">
+<script src="prism.js"></script>
 		<script
 			type="module"
 			src="https://md-block.verou.me/md-block.js"
 		></script>
         <script>
             window.onload = function() {
-				// ... ?source=welcome
+    // Get the current URL
+    var url = new URL(window.location.href);
 
-                // Get the current URL
-                var url = new URL(window.location.href);
-            
-                // Extract the query string part
-                var queryString = url.source;
-            
-                // Select the md-block element
-                var mdBlock = document.querySelector('md-block');
-            
-				console.log(url + "/md/" + queryString)
-                // Set the src attribute of the md-block element to the extracted query string
-                mdBlock.setAttribute('src', url + "/md/" + queryString);
-            }
+    // Extract the hash part and remove the '#' character
+    var source = url.hash.slice(1);
+
+    // Select the md-block element
+    var mdBlock = document.querySelector('.md');
+
+    // Get the base URL without the hash
+    var baseUrl = url.origin + url.pathname;
+
+    console.log(baseUrl + "/md/" + source +".md")
+    // Set the src attribute of the md-block element to the extracted hash
+    mdBlock.setAttribute('src', baseUrl + "/md/" + source +".md");
+}
             </script>
 	</head>
 	<body>
-		<md-block src="">		
+		<md-block class="md" src="">		
 	</body>
 </html>
