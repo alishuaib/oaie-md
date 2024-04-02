@@ -1,0 +1,4 @@
+```py
+initial = 'A'
+symbol = '&'
+```
