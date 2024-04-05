@@ -1,11 +1,12 @@
 ```py
 # Create a car object (instance)
-my_car = Car("Honda", "Civic")
+car_1 = Car("Honda", "Civic")
+car_2 = Car("Toyota", "Corolla")
 
 # Accessing attributes and calling methods
-print(f"Car make: {my_car.make}")
-print(f"Car model: {my_car.model}")
+print(f"Car make: {car_1.make}") # Honda
+print(f"Car model: {car_2.model}") # Corolla
 
-my_car.accelerate()
-my_car.brake()
+car_1.accelerate() # The Honda Civic is accelerating!
+car_1.brake() # The Honda Civic is braking!
 ```
