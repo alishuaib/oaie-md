@@ -7,7 +7,10 @@ message = f'Hi {name}, the apple will cost you ${30}'
 poem = "Roses are red,\nViolets are blue,\nSugar is sweet,\nAnd so are you."
 # Multi-line string with triple quotes
 poem = """Roses are red,
+
 Violets are blue,
+
 Sugar is sweet,
+
 And so are you."""
 ```
