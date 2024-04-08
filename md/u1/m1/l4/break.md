@@ -1,7 +1,7 @@
 ```py
 word = "hello"
 for letter in word:
-    if letter == 'o':
-       break  # Found the 'o'!
+    if letter == 'e':
+       break  # Found the 'e'!
     print(letter)
 ```
