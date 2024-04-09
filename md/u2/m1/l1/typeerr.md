@@ -1,0 +1,3 @@
+```console
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+```
