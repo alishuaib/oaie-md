@@ -1,0 +1,3 @@
+```python
+apply_style()
+```
