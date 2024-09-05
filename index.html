@@ -33,34 +33,33 @@
 			type="module"
 			src="https://md-block.verou.me/md-block.js"
 		></script>
-		<script>
-			window.addEventListener("load", () => {
-			  const height = document.body.scrollHeight;
-			  window.parent.postMessage(
-				{ id: "contentFrame", height: height , url: window.location.href },
-				"*"
-			  );
-			});
-		  </script>
         <script>
             window.onload = function() {
-    // Get the current URL
-    var url = new URL(window.location.href);
+				// Get the current URL
+				var url = new URL(window.location.href);
 
-    // Extract the hash part and remove the '#' character
-    var source = url.hash.slice(1);
+				// Extract the hash part and remove the '#' character
+				var source = url.hash.slice(1);
 
-    // Select the md-block element
-    var mdBlock = document.querySelector('.md');
+				// Select the md-block element
+				var mdBlock = document.querySelector('.md');
 
-    // Get the base URL without the hash
-    var baseUrl = url.origin + url.pathname;
+				// Get the base URL without the hash
+				var baseUrl = url.origin + url.pathname;
 
-    console.log(baseUrl + "/md/" + source +".md")
-    // Set the src attribute of the md-block element to the extracted hash
-    mdBlock.setAttribute('src', baseUrl + "/md/" + source +".md");
-}
-            </script>
+				console.log(baseUrl + "/md/" + source +".md")
+				// Set the src attribute of the md-block element to the extracted hash
+				mdBlock.setAttribute('src', baseUrl + "/md/" + source +".md");
+
+				mdBlock.addEventListener('load', function() { //Send even to parent
+					const height = document.body.scrollHeight;
+					window.parent.postMessage(
+						{ id: "contentFrame", height: height , url: window.location.href },
+						"*"
+					);
+				});
+			}
+        </script>
 	</head>
 	<body class="line-numbers">
 		<md-block class="md" src="">	
