@@ -6,6 +6,8 @@
 			name="viewport"
 			content="width=device-width, initial-scale=1.0"
 		/>
+		<META HTTP-EQUIV="Access-Control-Allow-Origin" CONTENT="http://localhost:4321">
+			<META HTTP-EQUIV="Access-Control-Allow-Origin" CONTENT="https://eportal365.brightspace.com">
 		<title>Help</title>
 		<style>
 			html{
@@ -33,6 +35,15 @@
 			type="module"
 			src="https://md-block.verou.me/md-block.js"
 		></script>
+		<script>
+			window.addEventListener("load", () => {
+			  const height = document.body.scrollHeight;
+			  window.parent.postMessage(
+				{ id: "contentFrame", height: height },
+				"*"
+			  );
+			});
+		  </script>
         <script>
             window.onload = function() {
     // Get the current URL
@@ -54,6 +65,7 @@
             </script>
 	</head>
 	<body class="line-numbers">
-		<md-block class="md" src="">		
+		<md-block class="md" src="">	
+			
 	</body>
 </html>
