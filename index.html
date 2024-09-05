@@ -54,7 +54,7 @@
 				mdBlock.addEventListener('load', function() { //Send even to parent
 					const height = document.body.scrollHeight;
 					window.parent.postMessage(
-						{ id: "contentFrame", height: height , url: window.location.href },
+						{ height: height , url: window.location.href },
 						"*"
 					);
 				});
