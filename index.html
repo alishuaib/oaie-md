@@ -51,13 +51,14 @@
 				// Set the src attribute of the md-block element to the extracted hash
 				mdBlock.setAttribute('src', baseUrl + "/md/" + source +".md");
 
-				mdBlock.addEventListener('load', function() { //Send even to parent
+				setTimeout(function() {
+					// Send event to parent
 					const height = document.body.scrollHeight;
 					window.parent.postMessage(
-						{ height: height , url: window.location.href },
+						{ height: height, url: window.location.href },
 						"*"
 					);
-				});
+				}, 3000);
 			}
         </script>
 	</head>
