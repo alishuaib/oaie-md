@@ -37,7 +37,7 @@
 			window.addEventListener("load", () => {
 			  const height = document.body.scrollHeight;
 			  window.parent.postMessage(
-				{ id: "contentFrame", height: height },
+				{ id: "contentFrame", height: height , url: window.location.href },
 				"*"
 			  );
 			});
